@@ -6,10 +6,11 @@ const BannerSlide = (): React.JSX.Element => {
   return (
     <div
       className={styles.bannerSlide}
-      style={{ backgroundImage: `url(/images/banner.jpg)` }}>
+      style={{ backgroundImage: `url(/images/banner.jpg)` }}
+    >
       <Container>
         <Htag className={styles.paddingTop} color="white" size="large" tag="h1">
-          Amazing Discounts on Garden Products!
+          Amazing Discounts on Garden Products!
         </Htag>
         <Button className={styles.buttonBanner} bgColor="green" color="white">
           Check out

@@ -23,6 +23,7 @@ const Input = ({ name, type, value, placeholder, onChange }: IInputProps) => {
       id={name}
       type={type}
       placeholder={placeholder}
+      autoComplete="off"
     />
   );
 };

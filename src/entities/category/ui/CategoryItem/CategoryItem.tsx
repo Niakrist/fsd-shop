@@ -9,10 +9,10 @@ const CategoryItem = ({ item }: ICategoryItemProps): React.JSX.Element => {
 
   return (
     <li className={styles.card}>
-      <Link to={slug} className={styles.imgWrapper}>
+      <Link to={`categories/${slug}`} className={styles.imgWrapper}>
         <img className={styles.img} src={image} alt={name} />
       </Link>
-      <Link className={styles.link} to={slug}>
+      <Link className={styles.link} to={`categories/${slug}`}>
         {name}
       </Link>
     </li>
