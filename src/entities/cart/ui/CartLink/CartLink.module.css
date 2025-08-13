@@ -1,0 +1,34 @@
+.link {
+  position: relative;
+}
+
+.quantity {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: 7px;
+  left: 0px;
+
+  width: 26px;
+  height: 24px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 0.9;
+  color: var(--white);
+
+  background-color: var(--green);
+  border-radius: 50%;
+}
+
+.iconCart {
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.iconCart:hover {
+  color: var(--green);
+}

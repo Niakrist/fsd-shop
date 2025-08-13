@@ -1,0 +1,16 @@
+.section {
+  padding-top: 80px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(248px, 316px));
+  gap: 32px;
+}

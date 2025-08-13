@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.imgWrapper {
+  border-radius: 12px;
+  height: 350px;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+.img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.card:hover .imgWrapper {
+  box-shadow: 0 2px 6px var(--grey);
+}
+
+.card:hover .link,
+.link:hover {
+  color: var(--green);
+}

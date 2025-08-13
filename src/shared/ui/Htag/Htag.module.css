@@ -1,0 +1,16 @@
+.large {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 1.1;
+}
+.medium {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.1;
+}
+.whiteText {
+  color: var(--white);
+}
+.blackText {
+  color: var(--black);
+}
