@@ -2,9 +2,9 @@
   padding-top: 80px;
 }
 
-.container {
+.content {
+  padding: 32px 32px 0;
   border-radius: 12px;
-  padding: 32px 32px 0px 32px;
   background: linear-gradient(220deg, #0b710b 0%, #393 100%);
 }
 
@@ -13,6 +13,8 @@
 }
 
 .wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
   align-items: end;
 }

@@ -1,1 +1,1 @@
-export { Subscribe } from "./subscribe";
+export { FormForSend } from "./send-form";

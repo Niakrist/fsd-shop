@@ -12,3 +12,6 @@ export { Button };
 
 import Label from "./Label/Label";
 export { Label };
+
+import Input from "./Input/Input";
+export { Input };
