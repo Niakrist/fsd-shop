@@ -6,7 +6,7 @@ import { CategoryItem } from "@/entities";
 import { useGetCategoriesQuery } from "@/entities/category/api/categoriesApi";
 
 const CategoryList = (): React.JSX.Element => {
-  const { data, isLoading } = useGetCategoriesQuery(null);
+  const { data } = useGetCategoriesQuery(null);
 
   const cropData = data && data.length > 4 ? data.slice(0, 4) : data;
 
