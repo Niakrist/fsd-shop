@@ -14,6 +14,7 @@ const FormForSend = (): React.JSX.Element => {
       <Input
         name="name"
         type="text"
+        sizeInput="big"
         value={dataForm.name}
         onChange={onChange}
         placeholder="Name"
@@ -21,6 +22,7 @@ const FormForSend = (): React.JSX.Element => {
       <Input
         name="phone"
         type="tel"
+        sizeInput="big"
         value={dataForm.phone}
         onChange={onChange}
         placeholder="Phone number"
@@ -28,6 +30,7 @@ const FormForSend = (): React.JSX.Element => {
       <Input
         name="email"
         type="email"
+        sizeInput="big"
         value={dataForm.email}
         onChange={onChange}
         placeholder="Email"

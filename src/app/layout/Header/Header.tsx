@@ -8,8 +8,8 @@ import { CartLink } from "@/entities";
 
 const Header = (): React.JSX.Element => {
   return (
-    <Container>
-      <header className={styles.header}>
+    <header className={styles.header}>
+      <Container className={styles.container}>
         <Icon name={"iconLogo"} />
         <nav className={styles.nav}>
           <ul className={styles.list}>
@@ -23,8 +23,8 @@ const Header = (): React.JSX.Element => {
           </ul>
         </nav>
         <CartLink />
-      </header>
-    </Container>
+      </Container>
+    </header>
   );
 };
 

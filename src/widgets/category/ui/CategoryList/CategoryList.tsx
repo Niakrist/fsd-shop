@@ -1,27 +1,21 @@
 import React from "react";
-import { Container, Htag, Label } from "@/shared/ui";
 import { CategoryItem, useGetCategoriesQuery } from "@/entities";
 import styles from "./CategoryList.module.css";
+import type { ICategoryListProps } from "./CategoryList.props";
 
-const CategoryList = (): React.JSX.Element => {
+const CategoryList = ({ cropCount }: ICategoryListProps): React.JSX.Element => {
   const { data } = useGetCategoriesQuery(null);
-  const cropData = data && data.length > 4 ? data.slice(0, 4) : data;
+
+  const cropData =
+    cropCount && data && data.length > cropCount
+      ? data.slice(0, cropCount)
+      : data;
 
   return (
-    <section className={styles.section}>
-      <Container>
-        <div className={styles.title}>
-          <Htag color="black" tag="h2" size="medium">
-            Categories
-          </Htag>
-          <Label link="categories">All categories</Label>
-        </div>
-        <ul className={styles.list}>
-          {cropData &&
-            cropData.map((item) => <CategoryItem key={item.id} item={item} />)}
-        </ul>
-      </Container>
-    </section>
+    <ul className={styles.list}>
+      {cropData &&
+        cropData.map((item) => <CategoryItem key={item.id} item={item} />)}
+    </ul>
   );
 };
 

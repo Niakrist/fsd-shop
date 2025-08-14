@@ -1,2 +1,9 @@
-import BannerSlide from "./BannerSlide/BannerSlide";
-export { BannerSlide };
+export { BannerSlide, ProductItem } from "./ui";
+
+export {
+  useGetProductsQuery,
+  useGetProductByIdQuery,
+  productsApi,
+} from "./api";
+
+export type { IProduct } from "./model";

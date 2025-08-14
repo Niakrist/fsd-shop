@@ -1,2 +1,2 @@
 export { CategoryItem } from "./ui";
-export { useGetCategoriesQuery } from "./api";
+export { useGetCategoriesQuery, categoriesApi } from "./api";

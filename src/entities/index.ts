@@ -1,3 +1,4 @@
-export { CartLink } from "./cart";
-export { BannerSlide } from "./product";
-export { CategoryItem, useGetCategoriesQuery } from "./category";
+export * from "./cart";
+export * from "./product";
+export * from "./category";
+export * from "./title";

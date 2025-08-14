@@ -1,6 +1,7 @@
+import type React from "react";
 import type { IIconsProps } from "./Icons.props";
 
-const IconLogo = ({ className, ...props }: IIconsProps) => {
+const IconLogo = ({ className, ...props }: IIconsProps): React.JSX.Element => {
   return (
     <svg
       className={className}

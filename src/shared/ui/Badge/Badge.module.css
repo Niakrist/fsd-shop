@@ -1,0 +1,17 @@
+.badge {
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  display: inline-block;
+}
+
+.whiteText {
+  color: var(--white);
+}
+
+.bgGreen {
+  background-color: var(--green);
+  border-radius: 6px;
+}

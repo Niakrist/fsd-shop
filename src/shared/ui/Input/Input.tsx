@@ -1,22 +1,22 @@
 import React from "react";
 import styles from "./Input.module.css";
+import cn from "classnames";
+import type { IInputProps } from "./Input.props";
 
-interface IInputProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
-  name: "name" | "phone" | "email";
-  type: "text" | "tel" | "email";
-  value: string;
-  placeholder: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const Input = ({ name, type, value, placeholder, onChange }: IInputProps) => {
+const Input = ({
+  name,
+  type,
+  value,
+  sizeInput,
+  placeholder,
+  onChange,
+}: IInputProps): React.JSX.Element => {
   return (
     <input
-      className={styles.input}
+      className={cn(styles.input, {
+        [styles.bigInput]: sizeInput === "big",
+        [styles.smallInput]: sizeInput === "small",
+      })}
       value={value}
       onChange={onChange}
       name={name}

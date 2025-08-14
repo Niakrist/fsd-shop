@@ -4,10 +4,9 @@ import { Button, Container, Htag } from "@/shared/ui";
 
 const BannerSlide = (): React.JSX.Element => {
   return (
-    <div
+    <section
       className={styles.bannerSlide}
-      style={{ backgroundImage: `url(/images/banner.jpg)` }}
-    >
+      style={{ backgroundImage: `url(/images/banner.jpg)` }}>
       <Container>
         <Htag className={styles.paddingTop} color="white" size="large" tag="h1">
           Amazing Discounts on Garden Products!
@@ -16,7 +15,7 @@ const BannerSlide = (): React.JSX.Element => {
           Check out
         </Button>
       </Container>
-    </div>
+    </section>
   );
 };
 

@@ -1,30 +1,53 @@
 .input {
+  display: block;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
+  border-radius: 6px;
+  transition: border 0.2s;
+}
+
+.input::placeholder {
+  font-weight: 500;
+  color: var(--grey);
+  font-family: inherit;
+}
+
+.bigInput {
   width: 100%;
   padding: 16px 32px;
-  display: block;
   border: 1px solid var(--white);
-  border-radius: 6px;
-  background-color: transparent;
-  outline: none;
-  transition: border 0.2s;
 
   font-weight: 500;
   font-size: 20px;
   line-height: 1.3;
   color: var(--white);
-  font-family: inherit;
 }
 
-.input::placeholder {
-  font-weight: 500;
+.bigInput::placeholder {
   font-size: 20px;
   line-height: 1.3;
-  color: var(--grey);
-  font-family: inherit;
 }
 
-.input:hover,
-.input:focus,
-.input:active {
+.bigInput:hover,
+.bigInput:focus,
+.bigInput:active {
   border: 1px solid var(--grey);
+}
+
+.smallInput {
+  width: 112px;
+  border: 1px solid var(--grey-divider);
+  padding: 8px 16px;
+}
+
+.smallInput::placeholder {
+  font-size: 16px;
+  line-height: 1.26;
+}
+
+.smallInput:hover,
+.smallInput:focus,
+.smallInput:active {
+  border: 1px solid var(--green);
 }

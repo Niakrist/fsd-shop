@@ -1,0 +1,82 @@
+.dropDown {
+  position: relative;
+  max-width: 200px;
+}
+
+.button {
+  width: 100%;
+  border: 1px solid var(--grey-divider);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: inherit;
+  border-radius: 6px;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.button.active {
+  border-radius: 6px 6px 0 0;
+  border: 1px solid var(--green);
+}
+
+.button:hover {
+  border: 1px solid var(--green);
+}
+
+.icon {
+  color: var(--black);
+  transform: rotate(-90deg);
+  transition: color 0.2s, transform 0.2s;
+}
+.button:hover .icon {
+  color: var(--green);
+}
+
+.icon.active {
+  color: var(--green);
+  transform: rotate(0);
+}
+
+.list {
+  border-radius: 0 0 6px 6px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 38px;
+  z-index: 5;
+  border-left: 1px solid var(--green);
+  border-right: 1px solid var(--green);
+  border-bottom: 1px solid var(--green);
+  background-color: var(--white);
+}
+
+.item {
+  padding: 8px 16px;
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.round {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--grey-divider);
+  transition: border 0.2s;
+}
+
+.label:hover .round {
+  border: 1px solid var(--green);
+}

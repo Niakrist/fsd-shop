@@ -15,3 +15,12 @@ export { Label };
 
 import Input from "./Input/Input";
 export { Input };
+
+import Badge from "./Badge/Badge";
+export { Badge };
+
+import WrapperAddress from "./WrapperAddress/WrapperAddress";
+export { WrapperAddress };
+
+import YandexMap from "./YandexMap/YandexMap";
+export { YandexMap };

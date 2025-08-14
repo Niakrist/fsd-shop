@@ -1,7 +1,18 @@
+import { Container, Htag } from "@/shared/ui";
 import React from "react";
-
-const CategoriesPage = () => {
-  return <div>CategoriesPage</div>;
+import styles from "./CategoriesPage.module.css";
+import { CategoryList, Contacts } from "@/widgets";
+import { Title } from "@/entities";
+const CategoriesPage = (): React.JSX.Element => {
+  return (
+    <section className={styles.section}>
+      <Container>
+        <Title title="Categories" />
+        <CategoryList />
+      </Container>
+      <Contacts />
+    </section>
+  );
 };
 
 export default CategoriesPage;
