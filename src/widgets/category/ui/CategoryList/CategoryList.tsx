@@ -1,13 +1,10 @@
 import React from "react";
-
-import styles from "./CategoryList.module.css";
 import { Container, Htag, Label } from "@/shared/ui";
-import { CategoryItem } from "@/entities";
-import { useGetCategoriesQuery } from "@/entities/category/api/categoriesApi";
+import { CategoryItem, useGetCategoriesQuery } from "@/entities";
+import styles from "./CategoryList.module.css";
 
 const CategoryList = (): React.JSX.Element => {
   const { data } = useGetCategoriesQuery(null);
-
   const cropData = data && data.length > 4 ? data.slice(0, 4) : data;
 
   return (
@@ -17,7 +14,7 @@ const CategoryList = (): React.JSX.Element => {
           <Htag color="black" tag="h2" size="medium">
             Categories
           </Htag>
-          <Label link="all-categories">All categories</Label>
+          <Label link="categories">All categories</Label>
         </div>
         <ul className={styles.list}>
           {cropData &&

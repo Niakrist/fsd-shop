@@ -23,7 +23,8 @@ const Button = ({
         [styles.greenBgColor]: bgColor === "green",
         [styles.whiteBorder]: border === "white",
         [styles.blackBorder]: border === "black",
-      })}>
+      })}
+    >
       {children}
     </button>
   );

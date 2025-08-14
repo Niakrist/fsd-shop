@@ -4,14 +4,14 @@ import cn from "classnames";
 
 import styles from "./Htag.module.css";
 
-const Htag: React.FC<IHtagProps> = ({
+const Htag = ({
   tag,
   size,
   color,
   children,
   className,
   ...props
-}) => {
+}: IHtagProps): React.JSX.Element => {
   const Tag = tag as keyof React.JSX.IntrinsicElements;
 
   return React.createElement(

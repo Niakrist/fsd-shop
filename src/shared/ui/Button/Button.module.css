@@ -3,37 +3,41 @@
   padding: 0;
   border-radius: 6px;
   border: none;
-
   font-weight: 600;
   font-size: 20px;
   line-height: 1.3;
-
   font-family: inherit;
-
   cursor: pointer;
 }
 
 .whiteText {
   color: var(--white);
 }
+
 .blackText {
   color: var(--black);
 }
+
 .greenText {
   color: var(--green);
 }
+
 .whiteBgColor {
   background-color: var(--white);
 }
+
 .blackBgColor {
   background-color: var(--black);
 }
+
 .greenBgColor {
   background-color: var(--green);
 }
+
 .whiteBorder {
   border: 1px solid var(--white);
 }
+
 .blackBorder {
   border: 1px solid var(--black);
 }

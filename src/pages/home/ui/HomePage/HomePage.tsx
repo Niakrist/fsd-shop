@@ -1,6 +1,5 @@
 import { BannerSlide } from "@/entities";
-import { Subscribe } from "@/features";
-import { CategoryList } from "@/widgets";
+import { CategoryList, Subscribe } from "@/widgets";
 
 import React from "react";
 
