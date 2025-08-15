@@ -63,10 +63,16 @@
 }
 
 .label {
+  padding: 4px 0;
   display: flex;
   gap: 16px;
   align-items: center;
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+.label:hover {
+  color: var(--green);
 }
 
 .round {
@@ -75,6 +81,27 @@
   border-radius: 50%;
   border: 1px solid var(--grey-divider);
   transition: border 0.2s;
+}
+
+.activeLabel {
+  color: var(--green);
+}
+
+.activeRadio {
+  position: relative;
+  border: 1px solid var(--green);
+}
+
+.activeRadio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--green);
 }
 
 .label:hover .round {

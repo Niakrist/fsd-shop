@@ -5,7 +5,7 @@ export interface IInputProps
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  name: "name" | "phone" | "email" | "minPrice" | "maxPrice";
+  name: "name" | "phone" | "email" | "minPrice" | "maxPrice" | "search";
   type: "text" | "tel" | "email";
   sizeInput: "small" | "big";
   value: string;

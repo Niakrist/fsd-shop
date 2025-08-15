@@ -35,7 +35,11 @@ const FormForSend = (): React.JSX.Element => {
         onChange={onChange}
         placeholder="Email"
       />
-      <Button type="submit" color="black" bgColor="white">
+      <Button
+        className={styles.button}
+        type="submit"
+        color="black"
+        bgColor="white">
         Get a discount
       </Button>
     </form>

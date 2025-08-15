@@ -1,17 +1,12 @@
 import React from "react";
 import styles from "./ProductList.module.css";
-import { ProductItem, useGetProductsQuery } from "@/entities";
+import { ProductItem } from "@/entities";
 import type { IProductListProps } from "./ProductList.props";
-import { useSearchParams } from "react-router-dom";
 
-const ProductList = ({ cropCount }: IProductListProps): React.JSX.Element => {
-  const [searchParams] = useSearchParams();
-
-  const params = searchParams.toString();
-  const { data: products } = useGetProductsQuery(params, {
-    refetchOnMountOrArgChange: true,
-  });
-
+const ProductList = ({
+  products,
+  cropCount,
+}: IProductListProps): React.JSX.Element => {
   const cropData =
     products && cropCount && products.length > cropCount
       ? products.slice(0, cropCount)

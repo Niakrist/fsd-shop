@@ -7,5 +7,5 @@ export interface IButtonProps
   className?: string;
   color: "white" | "black" | "green";
   bgColor: "white" | "black" | "green";
-  border?: "white" | "black";
+  border?: "white" | "black" | "grey";
 }

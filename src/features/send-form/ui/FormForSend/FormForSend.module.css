@@ -4,3 +4,7 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.button {
+  padding: 16px 32px;
+}

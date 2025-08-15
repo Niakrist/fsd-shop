@@ -1,0 +1,11 @@
+.button {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+  transition: border 0.2s;
+}
+
+.button:hover {
+  border: 1px solid var(--green);
+}

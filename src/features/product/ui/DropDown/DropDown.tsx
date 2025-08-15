@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./DropDown.module.css";
 import { Icon } from "@/shared/ui";
 import cn from "classnames";
+import type { ICategory } from "@/entities";
 
-const DropDown = () => {
+interface IDropDownProps {
+  items: ICategory[];
+  value: ICategory;
+  setValue: (value: ICategory) => void;
+}
+
+const DropDown = ({ items, value, setValue }: IDropDownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const handleChange = (value: ICategory) => {
+    setValue(value);
+    setIsOpen((prev) => !prev);
+  };
+  //categorySlug
   return (
     <div className={styles.dropDown}>
       <button
         className={cn(styles.button, { [styles.active]: isOpen })}
         onClick={handleClick}>
-        Category{" "}
+        {value?.name || "Category "}
         <Icon
           name="iconChevron"
           className={cn(styles.icon, { [styles.active]: isOpen })}
@@ -23,31 +35,31 @@ const DropDown = () => {
       </button>
       {isOpen && (
         <ul className={styles.list}>
-          <li className={styles.item}>
-            <input
-              className={styles.input}
-              id="item-1"
-              type="radio"
-              value="item 1"
-              name="category"
-            />
-            <label className={styles.label} htmlFor="item-1">
-              <span className={styles.round} />
-              item-1
-            </label>
-          </li>
-          <li className={styles.item}>
-            <input id="item-2" type="radio" value="item 2" name="category" />
-            <label htmlFor="item-2">item-2</label>
-          </li>
-          <li className={styles.item}>
-            <input id="item-3" type="radio" value="item 3" name="category" />
-            <label htmlFor="item-3">item-3</label>
-          </li>
-          <li className={styles.item}>
-            <input id="item-4" type="radio" value="item 4" name="category" />
-            <label htmlFor="item-4">item-4</label>
-          </li>
+          {items.map((item) => (
+            <li key={item.name} className={styles.item}>
+              <input
+                className={styles.input}
+                id={item.id + item.name}
+                type="radio"
+                value={item.name}
+                name="category"
+                checked={value?.image === item.name}
+                onChange={() => handleChange(item)}
+              />
+              <label
+                className={cn(styles.label, {
+                  [styles.activeLabel]: value?.name === item.name,
+                })}
+                htmlFor={item.id + item.name}>
+                <span
+                  className={cn(styles.round, {
+                    [styles.activeRadio]: value?.name === item.name,
+                  })}
+                />
+                {item.name}
+              </label>
+            </li>
+          ))}
         </ul>
       )}
     </div>

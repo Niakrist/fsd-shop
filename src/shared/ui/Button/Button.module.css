@@ -1,5 +1,4 @@
 .button {
-  height: 58px;
   padding: 0;
   border-radius: 6px;
   border: none;
@@ -40,4 +39,8 @@
 
 .blackBorder {
   border: 1px solid var(--black);
+}
+
+.greyBorder {
+  border: 1px solid var(--grey-divider);
 }
