@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/shared/constants";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { ICategory } from "../model/category.interface";
+import type { ICategory, ParamsFilter } from "../model/category.interface";
 
 export const categoriesApi = createApi({
   reducerPath: "categoriesApi",
@@ -13,7 +13,15 @@ export const categoriesApi = createApi({
         };
       },
     }),
+    getCategoryBySlug: builder.query<ICategory, ParamsFilter>({
+      query: (params) => {
+        return {
+          url: `/categories/slug/${params}`,
+        };
+      },
+    }),
   }),
 });
 
-export const { useGetCategoriesQuery } = categoriesApi;
+export const { useGetCategoriesQuery, useGetCategoryBySlugQuery } =
+  categoriesApi;

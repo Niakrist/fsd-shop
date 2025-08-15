@@ -3,6 +3,7 @@ import { Layout } from "..";
 import {
   CartPage,
   CategoriesPage,
+  CategoryItemPage,
   HomePage,
   NotFound,
   ProductItem,
@@ -15,8 +16,8 @@ export const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index: true, Component: HomePage },
-      { path: "categories", Component: CategoriesPage },
-      { path: "categories/:products", Component: ProductItem },
+      { path: "categories/", Component: CategoriesPage },
+      { path: "categories/:slug", Component: CategoryItemPage },
       { path: "products", Component: ProductsPage },
       { path: "cart", Component: CartPage },
       { path: "not-found", Component: NotFound },

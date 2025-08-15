@@ -1,1 +1,5 @@
-export { useGetCategoriesQuery, categoriesApi } from "./categoriesApi";
+export {
+  useGetCategoriesQuery,
+  useGetCategoryBySlugQuery,
+  categoriesApi,
+} from "./categoriesApi";

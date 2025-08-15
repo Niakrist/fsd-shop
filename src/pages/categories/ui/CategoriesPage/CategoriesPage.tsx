@@ -1,4 +1,4 @@
-import { Container, Htag } from "@/shared/ui";
+import { Container } from "@/shared/ui";
 import React from "react";
 import styles from "./CategoriesPage.module.css";
 import { CategoryList, Contacts } from "@/widgets";

@@ -4,3 +4,7 @@ export interface ICategory {
   slug: string;
   image: string;
 }
+
+export interface ParamsFilter {
+  slug: string;
+}
