@@ -1,8 +1,8 @@
 import Pagination from "./Pagination/Pagination";
 export { Pagination };
 
-import ProductsFilter from "./ProductsFilter/ProductsFilter";
-export { ProductsFilter };
+import ProductSlider from "./ProductSlider/ProductSlider";
+export { ProductSlider };
 
-import DropDown from "./DropDown/DropDown";
-export { DropDown };
+import ReadMore from "./ReadMore/ReadMore";
+export { ReadMore };

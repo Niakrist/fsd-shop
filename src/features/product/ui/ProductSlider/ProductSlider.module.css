@@ -1,0 +1,42 @@
+.sliderWrapper {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bigSlide {
+  border-radius: 6px;
+  max-width: 780px;
+  height: 570px;
+}
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.smallSlid {
+  border-radius: 6px;
+  width: 150px;
+  cursor: pointer;
+  border: 2px solid var(--grey);
+  transition: border 0.2s;
+}
+
+.smallSlid:hover {
+  border: 2px solid var(--black);
+}
+
+.smallSlid.activeSlide {
+  border: 2px solid var(--green);
+}

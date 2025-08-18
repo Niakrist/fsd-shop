@@ -6,6 +6,8 @@ export interface IIconProps extends React.SVGProps<SVGSVGElement> {
     | "iconCart"
     | "iconWhatsapp"
     | "iconInstagram"
-    | "iconChevron";
+    | "iconChevron"
+    | "iconPlus"
+    | "iconMinus";
   className?: string;
 }

@@ -1,5 +1,6 @@
 export {
   useGetProductsQuery,
-  useGetProductByIdQuery,
+  useGetProductBySlugQuery,
+  useGetAllProductsByCategoryQuery,
   productsApi,
 } from "./productsApi";

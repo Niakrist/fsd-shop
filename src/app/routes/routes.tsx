@@ -19,6 +19,7 @@ export const router = createBrowserRouter([
       { path: "categories/", Component: CategoriesPage },
       { path: "categories/:slug", Component: CategoryItemPage },
       { path: "products", Component: ProductsPage },
+      { path: "products/:slug", Component: ProductItem },
       { path: "cart", Component: CartPage },
       { path: "not-found", Component: NotFound },
     ],

@@ -14,14 +14,25 @@ export const productsApi = createApi({
         };
       },
     }),
-    getProductById: builder.query<IProduct, number>({
+    getProductBySlug: builder.query<IProduct, string>({
+      query: (slug) => {
+        return {
+          url: `/products/slug/${slug}`,
+        };
+      },
+    }),
+    getAllProductsByCategory: builder.query<IProduct[], number>({
       query: (id) => {
         return {
-          url: `/products/${id}`,
+          url: `/categories/${id}/products`,
         };
       },
     }),
   }),
 });
 
-export const { useGetProductsQuery, useGetProductByIdQuery } = productsApi;
+export const {
+  useGetProductsQuery,
+  useGetProductBySlugQuery,
+  useGetAllProductsByCategoryQuery,
+} = productsApi;

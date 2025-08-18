@@ -1,0 +1,26 @@
+.section {
+  padding-top: 100px;
+}
+
+.productItem {
+  display: grid;
+  grid-template-columns: 1fr 548px;
+  gap: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wrapperPrice {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.button {
+  padding: 16px 32px;
+  width: 100%;
+}

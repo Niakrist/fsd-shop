@@ -2,8 +2,10 @@ import IconLogo from "./icons/IconLogo";
 import IconCart from "./icons/IconCart";
 import IconWhatsapp from "./icons/IconWhatsapp";
 import IconInstagram from "./icons/IconInstagram";
-import type { IIconProps } from "./Icon.props";
 import IconChevron from "./icons/IconChevron";
+import IconMinus from "./icons/IconMinus";
+import IconPlus from "./icons/iconPlus";
+import type { IIconProps } from "./Icon.props";
 
 const Icon = ({ name, className, ...props }: IIconProps) => {
   const icons = {
@@ -12,6 +14,8 @@ const Icon = ({ name, className, ...props }: IIconProps) => {
     iconWhatsapp: <IconWhatsapp className={className} {...props} />,
     iconInstagram: <IconInstagram className={className} {...props} />,
     iconChevron: <IconChevron className={className} {...props} />,
+    iconPlus: <IconPlus className={className} {...props} />,
+    iconMinus: <IconMinus className={className} {...props} />,
   };
 
   return icons[name];

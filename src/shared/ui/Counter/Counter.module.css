@@ -1,0 +1,48 @@
+.counter {
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--grey-divider);
+  border-radius: 6px;
+}
+
+.buttont {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  padding: 16px;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--grey);
+  transition: color 0.2s;
+}
+
+.buttont:hover {
+  color: var(--green);
+}
+
+.left {
+  border-right: 1px solid var(--grey-divider);
+}
+
+.right {
+  border-left: 1px solid var(--grey-divider);
+}
+
+.input {
+  padding: 16px;
+
+  font-family: inherit;
+  width: 100%;
+  text-align: center;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+
+  /* line-height: 26px; */
+  line-height: 1.3;
+  text-align: center;
+  color: var(--black);
+}

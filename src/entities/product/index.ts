@@ -2,7 +2,8 @@ export { BannerSlide, ProductItem } from "./ui";
 
 export {
   useGetProductsQuery,
-  useGetProductByIdQuery,
+  useGetAllProductsByCategoryQuery,
+  useGetProductBySlugQuery,
   productsApi,
 } from "./api";
 

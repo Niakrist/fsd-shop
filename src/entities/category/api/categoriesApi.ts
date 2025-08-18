@@ -13,7 +13,7 @@ export const categoriesApi = createApi({
         };
       },
     }),
-    getCategoryBySlug: builder.query<ICategory, ParamsFilter>({
+    getCategoryBySlug: builder.query<ICategory, string>({
       query: (params) => {
         return {
           url: `/categories/slug/${params}`,

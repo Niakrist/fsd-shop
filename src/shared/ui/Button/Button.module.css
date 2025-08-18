@@ -23,14 +23,28 @@
 
 .whiteBgColor {
   background-color: var(--white);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.whiteBgColor:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .blackBgColor {
   background-color: var(--black);
+  transition: background-color 0.2s;
+}
+.blackBgColor:hover {
+  background-color: var(--white);
 }
 
 .greenBgColor {
   background-color: var(--green);
+  transition: background-color 0.2s;
+}
+.greenBgColor:hover {
+  background-color: var(--black);
 }
 
 .whiteBorder {

@@ -4,7 +4,7 @@ export interface IHtagProps
     HTMLHeadingElement
   > {
   tag: "h1" | "h2";
-  size: "medium" | "large";
+  size: "werySmall" | "small" | "medium" | "large";
   color: "white" | "black";
   children: React.ReactNode;
 }

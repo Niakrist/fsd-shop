@@ -24,3 +24,9 @@ export { WrapperAddress };
 
 import YandexMap from "./YandexMap/YandexMap";
 export { YandexMap };
+
+import DropDown from "./DropDown/DropDown";
+export { DropDown };
+
+import Text from "./Text/Text";
+export { Text };

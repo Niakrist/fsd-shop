@@ -21,6 +21,8 @@ const Htag = ({
       className: cn(className, {
         [styles.large]: size === "large",
         [styles.medium]: size === "medium",
+        [styles.small]: size === "small",
+        [styles.werySmall]: size === "werySmall",
         [styles.whiteText]: color === "white",
         [styles.blackText]: color === "black",
       }),

@@ -2,8 +2,8 @@ import { Container } from "@/shared/ui";
 import React from "react";
 import styles from "./ProductsPage.module.css";
 import { Title, useGetCategoriesQuery, useGetProductsQuery } from "@/entities";
-import { ProductList } from "@/widgets";
-import { ProductsFilter } from "@/features";
+import { ProductList, ProductsFilter } from "@/widgets";
+
 import { useSearchParams } from "react-router-dom";
 
 const ProductsPage = (): React.JSX.Element => {

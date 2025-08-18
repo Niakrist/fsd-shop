@@ -1,24 +1,30 @@
 import { Title, useGetCategoryBySlugQuery } from "@/entities";
 import { Container } from "@/shared/ui";
-import { CategoryList, Contacts } from "@/widgets";
+import { Contacts, ProductList } from "@/widgets";
 import React from "react";
 import { useParams } from "react-router-dom";
 import styles from "./CategoryItemPage.module.css";
+import { useGetAllProductsByCategoryQuery } from "@/entities/product/api/productsApi";
+import { skipToken } from "@reduxjs/toolkit/query";
 
 const CategoryItemPage = (): React.JSX.Element => {
   const { slug } = useParams();
 
-  const { data, isLoading } = useGetCategoryBySlugQuery(slug);
+  const { data: category } = useGetCategoryBySlugQuery(slug ?? skipToken);
 
-  if (isLoading || !data) {
+  const { data: products } = useGetAllProductsByCategoryQuery(
+    category?.id ?? skipToken
+  );
+
+  if (!category || !products) {
     return <div>Loading</div>;
   }
 
   return (
     <section className={styles.section}>
       <Container>
-        <Title title={data.name} />
-        <CategoryList />
+        <Title title={category.name} />
+        <ProductList products={products || []} />
       </Container>
       <Contacts />
     </section>
