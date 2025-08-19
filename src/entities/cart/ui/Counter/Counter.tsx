@@ -1,35 +1,36 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Counter.module.css";
 import cn from "classnames";
 import { Icon } from "@/shared/ui";
-import type { IProduct } from "@/entities/product";
-import { useAppSelector } from "@/app/store/store";
 
 interface ICounterProps {
-  handleIncrement: (params: { product: IProduct; quantity: number }) => void;
-  handleDecrement: (params: { product: IProduct; quantity: number }) => void;
-  product: IProduct;
+  count: number;
+  handleChangeCount: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleDecrement: () => void;
+  handleIncrement: () => void;
 }
 
 const Counter = ({
-  product,
-  handleIncrement,
+  handleChangeCount,
   handleDecrement,
+  handleIncrement,
+  count,
 }: ICounterProps): React.JSX.Element => {
-  useEffect(() => {
-    console.log("product: ", product);
-  }, [handleIncrement, handleDecrement]);
-
   return (
     <div className={styles.counter}>
       <button
-        onClick={() => handleDecrement({ product: product, quantity: 1 })}
+        onClick={handleDecrement}
         className={cn(styles.buttont, styles.left)}>
         <Icon name="iconMinus" />
       </button>
-      <input value={1} className={styles.input} type="string" />
+      <input
+        onChange={handleChangeCount}
+        value={count}
+        className={styles.input}
+        type="string"
+      />
       <button
-        onClick={() => handleIncrement({ product: product, quantity: 1 })}
+        onClick={handleIncrement}
         className={cn(styles.buttont, styles.right)}>
         <Icon name="iconPlus" />
       </button>

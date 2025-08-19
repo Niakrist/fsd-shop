@@ -6,6 +6,7 @@ import IconChevron from "./icons/IconChevron";
 import IconMinus from "./icons/IconMinus";
 import IconPlus from "./icons/iconPlus";
 import type { IIconProps } from "./Icon.props";
+import IconCross from "./icons/IconCross";
 
 const Icon = ({ name, className, ...props }: IIconProps) => {
   const icons = {
@@ -16,6 +17,7 @@ const Icon = ({ name, className, ...props }: IIconProps) => {
     iconChevron: <IconChevron className={className} {...props} />,
     iconPlus: <IconPlus className={className} {...props} />,
     iconMinus: <IconMinus className={className} {...props} />,
+    iconCross: <IconCross className={className} {...props} />,
   };
 
   return icons[name];

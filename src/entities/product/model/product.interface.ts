@@ -1,4 +1,4 @@
-import type { ICategory } from "@/entities/category/@x/proruct";
+import type { ICategory } from "@/entities/category/@x/product";
 
 export interface IProduct {
   id: number;

@@ -1,47 +1,38 @@
-import type { IProduct } from "@/entities/product";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { IProductsInCart } from "./product-cart-slice.interface";
 
-interface IProdictsInCart {
-  product: IProduct;
-  quantity: 1;
-}
+const loadCartFromLocalStorage = (): IProductsInCart[] => {
+  const cart = localStorage.getItem("cart");
+  return cart ? JSON.parse(cart) : [];
+};
 
-const initialState: IProdictsInCart[] = [];
+const saveCartInLocalStorage = (cart: IProductsInCart[]) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+const initialState: IProductsInCart[] = loadCartFromLocalStorage();
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    increment: (state, action: PayloadAction<IProdictsInCart>) => {
+    change: (state, action: PayloadAction<IProductsInCart>) => {
       const currentProduct = state.find(
-        (item) => action.payload.product.id === item.product.id
+        (item) => item.product.id === action.payload.product.id
       );
       if (currentProduct) {
-        ++currentProduct.quantity;
+        currentProduct.quantity = action.payload.quantity;
       } else {
         state.push({
           product: action.payload.product,
           quantity: action.payload.quantity,
         });
       }
-    },
-    decrement: (state, action: PayloadAction<IProdictsInCart>) => {
-      const currentProduct = state.find(
-        (item) => item.product.id === action.payload.product.id
-      );
-      if (currentProduct && currentProduct.quantity > 1) {
-      }
-    },
-    change: (state, action: PayloadAction<IProduct>) => {
-      const currentProduct = state.find(
-        (item) => item.product.id === action.payload.id
-      );
-      if (currentProduct) {
-      }
+      saveCartInLocalStorage(state);
     },
   },
 });
 
-export const { increment, decrement } = cartSlice.actions;
+export const { change } = cartSlice.actions;
 
 export default cartSlice.reducer;

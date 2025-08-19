@@ -1,6 +1,6 @@
 import { BASE_URL } from "@/shared/constants";
+import type { IProduct } from "@/shared/interface";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { IProduct } from "../model/product.interface";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",

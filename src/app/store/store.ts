@@ -1,11 +1,10 @@
-import { categoriesApi, productsApi } from "@/entities";
-
 import { configureStore } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import filterSlice from "../../features/product/model/filterSlice";
-import cartSlice from "../../entities/cart/model/cartSlice";
+import filterSlice from "@/features/product/model/filterSlice";
+import { categoriesApi } from "@/entities/category/api/categoriesApi";
+import { productsApi } from "@/entities/product/api/productsApi";
+import cartSlice from "@/entities/cart/model/cartSlice";
 
 export const store = configureStore({
   reducer: {

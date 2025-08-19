@@ -1,4 +1,4 @@
-import { Title, useGetCategoryBySlugQuery } from "@/entities";
+import { Title } from "@/entities";
 import { Container } from "@/shared/ui";
 import { Contacts, ProductList } from "@/widgets";
 import React from "react";
@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./CategoryItemPage.module.css";
 import { useGetAllProductsByCategoryQuery } from "@/entities/product/api/productsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
+import { useGetCategoryBySlugQuery } from "@/entities/category/api/categoriesApi";
 
 const CategoryItemPage = (): React.JSX.Element => {
   const { slug } = useParams();

@@ -1,5 +1,5 @@
 .wrapperPrice {
-  max-width: 280px;
+  width: 280px;
   display: flex;
   align-items: flex-end;
   gap: 16px;
@@ -20,7 +20,7 @@
   color: var(--grey);
 }
 
-.dicsont {
+.discount {
   position: absolute;
   top: 0px;
   right: -20px;
