@@ -3,3 +3,6 @@ export { CartLink };
 
 import Counter from "./Counter/Counter";
 export { Counter };
+
+import CartItem from "./CartItem/CartItem";
+export { CartItem };

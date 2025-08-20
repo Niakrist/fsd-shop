@@ -10,6 +10,7 @@ interface IDropDownProps {
   handleChangeCategory: (value: string) => void;
   isOpen: boolean;
   name: "category";
+  className?: string;
 }
 
 const DropDown = ({
@@ -19,9 +20,10 @@ const DropDown = ({
   handleChangeCategory,
   isOpen,
   name,
+  className,
 }: IDropDownProps) => {
   return (
-    <div className={styles.dropDown}>
+    <div className={cn(styles.dropDown, className)}>
       <button
         className={cn(styles.button, { [styles.active]: isOpen })}
         onClick={handleClick}>
@@ -46,12 +48,12 @@ const DropDown = ({
               />
               <label
                 className={cn(styles.label, {
-                  [styles.activeLabel]: value === item.name,
+                  [styles.activeLabel]: value === item.slug,
                 })}
                 htmlFor={item.id + item.name}>
                 <span
                   className={cn(styles.round, {
-                    [styles.activeRadio]: value === item.name,
+                    [styles.activeRadio]: value === item.slug,
                   })}
                 />
                 {item.name}

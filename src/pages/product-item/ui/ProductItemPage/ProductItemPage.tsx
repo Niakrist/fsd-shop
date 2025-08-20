@@ -2,17 +2,27 @@ import { useGetProductBySlugQuery } from "@/entities/product/api/productsApi";
 import { ProductSlider, ReadMore } from "@/features";
 import { Button, Container, Htag, Text } from "@/shared/ui";
 import { skipToken } from "@reduxjs/toolkit/query";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./ProductItem.module.css";
+import styles from "./ProductItemPage.module.css";
 import PriceInfo from "@/shared/ui/PriceInfo/PriceInfo";
 import { Counter } from "@/entities";
 import { useAppDispatch, useAppSelector } from "@/app/store/store";
-import { change } from "@/entities/cart/model/cartSlice";
+import { addOrChangeItemInCart } from "@/entities/cart/model/cartSlice";
 
-const ProductItem = (): React.JSX.Element => {
+const ProductItemPage = (): React.JSX.Element => {
   const { slug } = useParams();
   const { data } = useGetProductBySlugQuery(slug ?? skipToken);
+  const cart = useAppSelector((state) => state.cart);
+  const currentProduct = cart.find((item) => item.product.id === data?.id);
+
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    if (currentProduct?.quantity) {
+      setCount(currentProduct?.quantity);
+    }
+  }, [currentProduct]);
 
   const dispatch = useAppDispatch();
 
@@ -20,7 +30,6 @@ const ProductItem = (): React.JSX.Element => {
     return <div>Загрузка </div>;
   }
 
-  const [count, setCount] = useState(1);
   const handleChangeCount = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const regEx = /^(?!0)\d+$/;
@@ -30,7 +39,10 @@ const ProductItem = (): React.JSX.Element => {
   };
 
   const handleDecrement = () => {
-    if (count > 1) {
+    if (
+      currentProduct?.quantity !== undefined &&
+      currentProduct?.quantity > 1
+    ) {
       setCount((prev) => prev - 1);
     }
   };
@@ -41,7 +53,7 @@ const ProductItem = (): React.JSX.Element => {
 
   const addToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    dispatch(change({ product: data, quantity: count }));
+    dispatch(addOrChangeItemInCart({ product: data, quantity: count }));
   };
 
   return (
@@ -89,4 +101,4 @@ const ProductItem = (): React.JSX.Element => {
   );
 };
 
-export default ProductItem;
+export default ProductItemPage;

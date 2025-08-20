@@ -1,4 +1,4 @@
-import { Button, Input } from "@/shared/ui";
+import { Button, Input, Text } from "@/shared/ui";
 import type { ICategory } from "@/entities";
 import styles from "./ProductsFilter.module.css";
 import { DropDown } from "@/shared/ui";
@@ -22,34 +22,58 @@ const ProductsFilter = ({ categories }: IProductsFilterProps) => {
   } = useFilter();
 
   return (
-    <div>
-      <Input
-        name="minPrice"
-        placeholder="from"
-        sizeInput="small"
-        type="text"
-        value={minPrice}
-        onChange={handleChange}
-      />
+    <div className={styles.filter}>
+      <div className={styles.group}>
+        <Text size="big" color="black" fontWeight="bold">
+          Price
+        </Text>
 
-      <Input
-        name="maxPrice"
-        placeholder="to"
-        sizeInput="small"
-        type="text"
-        value={maxPrice}
-        onChange={handleChange}
-      />
+        <Input
+          name="minPrice"
+          placeholder="from"
+          sizeInput="small"
+          type="text"
+          value={minPrice}
+          onChange={handleChange}
+        />
 
-      <DropDown
-        value={category}
-        items={categories}
-        handleClick={handleClick}
-        handleChangeCategory={handleChangeCategory}
-        isOpen={isOpen}
-        name="category"
-      />
-
+        <Input
+          name="maxPrice"
+          placeholder="to"
+          sizeInput="small"
+          type="text"
+          value={maxPrice}
+          onChange={handleChange}
+        />
+      </div>
+      <div className={styles.group}>
+        <Text size="big" color="black" fontWeight="bold">
+          Change Category
+        </Text>
+        <DropDown
+          className={styles.dropdown}
+          value={category}
+          items={categories}
+          handleClick={handleClick}
+          handleChangeCategory={handleChangeCategory}
+          isOpen={isOpen}
+          name="category"
+        />
+      </div>
+      <div className={styles.group}>
+        <Text size="big" color="black" fontWeight="bold">
+          Search Peoducts
+        </Text>
+        <Input
+          className={styles.search}
+          type="text"
+          value={searchTerm}
+          sizeInput="small"
+          name="searchTerm"
+          onChange={handleChange}
+          placeholder="Search"
+        />
+      </div>
       <Button
         className={styles.button}
         onClick={handleReset}
@@ -58,15 +82,6 @@ const ProductsFilter = ({ categories }: IProductsFilterProps) => {
         border="grey">
         Reset
       </Button>
-
-      <Input
-        type="text"
-        value={searchTerm}
-        sizeInput="small"
-        name="searchTerm"
-        onChange={handleChange}
-        placeholder="Search"
-      />
     </div>
   );
 };

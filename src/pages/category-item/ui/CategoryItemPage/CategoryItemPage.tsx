@@ -24,7 +24,7 @@ const CategoryItemPage = (): React.JSX.Element => {
   return (
     <section className={styles.section}>
       <Container>
-        <Title title={category.name} />
+        <Title title={category.name} tag="h1" />
         <ProductList products={products || []} />
       </Container>
       <Contacts />

@@ -10,5 +10,9 @@ export interface IInputProps
   sizeInput: "small" | "big";
   value: string;
   placeholder: string;
+  borderInput?: "grey" | "white";
+  backgroundInput?: "white" | "transparent";
+  colorPlaceholder?: "grey" | "white";
+  inputColor?: "white" | "black";
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

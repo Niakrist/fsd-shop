@@ -13,3 +13,10 @@
 .regular {
   font-weight: 400;
 }
+
+.bigText {
+  font-size: 20px;
+}
+.boldText {
+  font-weight: 600;
+}

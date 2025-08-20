@@ -7,7 +7,7 @@ const CategoriesPage = (): React.JSX.Element => {
   return (
     <section className={styles.section}>
       <Container>
-        <Title title="Categories" />
+        <Title title="Categories" tag="h1" />
         <CategoryList />
       </Container>
       <Contacts />

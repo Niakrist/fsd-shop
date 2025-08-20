@@ -6,6 +6,7 @@
 }
 
 .bigSlide {
+  overflow: hidden;
   border-radius: 6px;
   max-width: 780px;
   height: 570px;
@@ -16,7 +17,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 6px;
 }
 
 .slider {
@@ -26,6 +26,7 @@
 }
 
 .smallSlid {
+  overflow: hidden;
   border-radius: 6px;
   width: 150px;
   cursor: pointer;

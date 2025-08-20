@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import styles from "./FormForSend.module.css";
 import { Button, Input } from "@/shared/ui";
+import type { IFormForSendProps } from "./FormForSend.props";
 
-const FormForSend = (): React.JSX.Element => {
+const FormForSend = ({
+  inputColor,
+  borderInput,
+  backgroundInput,
+  colorPlaceholder,
+  bgButton,
+  colorButton,
+}: IFormForSendProps): React.JSX.Element => {
   const [dataForm, setDataForm] = useState({ name: "", phone: "", email: "" });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +26,10 @@ const FormForSend = (): React.JSX.Element => {
         value={dataForm.name}
         onChange={onChange}
         placeholder="Name"
+        borderInput={borderInput}
+        backgroundInput={backgroundInput}
+        colorPlaceholder={colorPlaceholder}
+        inputColor={inputColor}
       />
       <Input
         name="phone"
@@ -26,6 +38,10 @@ const FormForSend = (): React.JSX.Element => {
         value={dataForm.phone}
         onChange={onChange}
         placeholder="Phone number"
+        borderInput={borderInput}
+        backgroundInput={backgroundInput}
+        colorPlaceholder={colorPlaceholder}
+        inputColor={inputColor}
       />
       <Input
         name="email"
@@ -34,12 +50,16 @@ const FormForSend = (): React.JSX.Element => {
         value={dataForm.email}
         onChange={onChange}
         placeholder="Email"
+        borderInput={borderInput}
+        backgroundInput={backgroundInput}
+        colorPlaceholder={colorPlaceholder}
+        inputColor={inputColor}
       />
       <Button
         className={styles.button}
         type="submit"
-        color="black"
-        bgColor="white">
+        color={colorButton}
+        bgColor={bgButton}>
         Get a discount
       </Button>
     </form>

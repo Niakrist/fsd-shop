@@ -1,3 +1,15 @@
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .button {
   padding: 8px 16px;
   font-size: 16px;
@@ -8,4 +20,9 @@
 
 .button:hover {
   border: 1px solid var(--green);
+}
+
+.dropdown,
+.search {
+  width: 200px;
 }

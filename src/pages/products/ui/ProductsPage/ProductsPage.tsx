@@ -22,7 +22,7 @@ const ProductsPage = (): React.JSX.Element => {
   return (
     <section className={styles.section}>
       <Container>
-        <Title title="Tools and equipment" />
+        <Title tag="h1" title="Tools and equipment" />
         <ProductsFilter categories={categories || []} />
         <ProductList products={products || []} />
       </Container>

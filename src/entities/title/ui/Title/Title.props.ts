@@ -4,5 +4,6 @@ export interface ITitleProps
     HTMLDivElement
   > {
   title: string;
+  tag: "h1" | "h2";
   link?: string;
 }

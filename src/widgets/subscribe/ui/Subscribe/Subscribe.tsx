@@ -13,7 +13,14 @@ const Subscribe = (): React.JSX.Element => {
           </Htag>
           <div className={styles.wrapper}>
             <img src="./images/first-order.png" alt="" />
-            <FormForSend />
+            <FormForSend
+              bgButton="white"
+              backgroundInput="transparent"
+              borderInput="white"
+              colorPlaceholder="white"
+              colorButton="black"
+              inputColor="white"
+            />
           </div>
         </div>
       </Container>

@@ -9,8 +9,8 @@ export interface ITextProps
   > {
   children: React.ReactNode;
   color: "black";
-  size: "standart";
-  fontWeight: "regular";
+  size: "standart" | "big";
+  fontWeight: "regular" | "bold";
 }
 
 const Text = ({
@@ -23,8 +23,10 @@ const Text = ({
     <p
       className={cn(styles.text, {
         [styles.standart]: size === "standart",
+        [styles.bigText]: size === "big",
         [styles.textBlack]: color === "black",
         [styles.regular]: fontWeight === "regular",
+        [styles.boldText]: fontWeight === "bold",
       })}>
       {children}
     </p>

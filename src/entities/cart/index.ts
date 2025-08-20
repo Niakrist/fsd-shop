@@ -1,3 +1,2 @@
-export { CartLink } from "./ui";
-export { Counter } from "./ui";
+export { CartLink, Counter, CartItem } from "./ui";
 export { cartSlice } from "./model";

@@ -1,2 +1,2 @@
-import ProductItem from "./ProductItem/ProductItem";
-export { ProductItem };
+import ProductItemPage from "./ProductItemPage/ProductItemPage";
+export { ProductItemPage };

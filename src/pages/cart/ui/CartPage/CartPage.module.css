@@ -7,3 +7,57 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.wraper {
+  display: grid;
+  grid-template-columns: 1fr 548px;
+  gap: 32px;
+}
+
+.cartForm {
+  border-radius: 12px;
+  padding: 32px;
+  background-color: var(--light-grey);
+}
+
+.mb {
+  margin-bottom: 24px;
+}
+
+.totalInfo {
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.item {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.3;
+  color: var(--grey);
+}
+
+.total {
+  align-self: self-end;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.3;
+  color: var(--grey);
+}
+
+.price {
+  justify-self: end;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.1;
+  color: var(--black);
+}
