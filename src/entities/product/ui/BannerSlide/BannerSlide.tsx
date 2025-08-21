@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./BannerSlide.module.css";
 import { Button, Container, Htag } from "@/shared/ui";
+import styles from "./BannerSlide.module.css";
 
 const BannerSlide = (): React.JSX.Element => {
   return (

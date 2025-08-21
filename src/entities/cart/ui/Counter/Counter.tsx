@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Counter.module.css";
 import cn from "classnames";
 import { Icon } from "@/shared/ui";
+import styles from "./Counter.module.css";
 
 interface ICounterProps {
   count: number;

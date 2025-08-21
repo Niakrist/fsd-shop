@@ -1,14 +1,16 @@
-import { Button, Input, Text } from "@/shared/ui";
-import type { ICategory } from "@/entities";
-import styles from "./ProductsFilter.module.css";
-import { DropDown } from "@/shared/ui";
+import React from "react";
+import { Button, Input, Text, DropDown } from "@/shared/ui";
 import { useFilter } from "@/features";
+import type { ICategory } from "@/shared/interface";
+import styles from "./ProductsFilter.module.css";
 
 interface IProductsFilterProps {
   categories: ICategory[];
 }
 
-const ProductsFilter = ({ categories }: IProductsFilterProps) => {
+const ProductsFilter = ({
+  categories,
+}: IProductsFilterProps): React.JSX.Element => {
   const {
     handleChange,
     handleReset,

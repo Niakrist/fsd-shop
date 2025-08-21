@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Title.module.css";
 import { Htag, Label } from "@/shared/ui";
 import type { ITitleProps } from "./Title.props";
+import styles from "./Title.module.css";
 
 const Title = ({ title, tag, link }: ITitleProps): React.JSX.Element => {
   return (

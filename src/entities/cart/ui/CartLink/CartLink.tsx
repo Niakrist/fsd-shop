@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./CartLink.module.css";
-import { Icon } from "@/shared/ui";
 import { useAppSelector } from "@/app/store/store";
+import { Icon } from "@/shared/ui";
+import styles from "./CartLink.module.css";
+
 const CartLink = (): React.JSX.Element => {
   const cart = useAppSelector((state) => state.cart);
-
-  console.log("cart: ", cart);
 
   return (
     <Link className={styles.link} to="cart">

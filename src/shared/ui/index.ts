@@ -30,3 +30,6 @@ export { DropDown };
 
 import Text from "./Text/Text";
 export { Text };
+
+import PriceInfo from "./PriceInfo/PriceInfo";
+export { PriceInfo };

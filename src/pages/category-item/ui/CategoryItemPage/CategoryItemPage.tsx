@@ -1,12 +1,13 @@
-import { Title } from "@/entities";
-import { Container } from "@/shared/ui";
-import { Contacts, ProductList } from "@/widgets";
 import React from "react";
 import { useParams } from "react-router-dom";
-import styles from "./CategoryItemPage.module.css";
-import { useGetAllProductsByCategoryQuery } from "@/entities/product/api/productsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
+import { Container } from "@/shared/ui";
+import { Title } from "@/entities";
+import { Contacts, ProductList } from "@/widgets";
+import { useGetAllProductsByCategoryQuery } from "@/entities/product/api/productsApi";
 import { useGetCategoryBySlugQuery } from "@/entities/category/api/categoriesApi";
+import styles from "./CategoryItemPage.module.css";
+import { Pagination } from "@/features";
 
 const CategoryItemPage = (): React.JSX.Element => {
   const { slug } = useParams();
@@ -26,6 +27,7 @@ const CategoryItemPage = (): React.JSX.Element => {
       <Container>
         <Title title={category.name} tag="h1" />
         <ProductList products={products || []} />
+        <Pagination />
       </Container>
       <Contacts />
     </section>

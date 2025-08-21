@@ -1,6 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { IProductsInCart } from "./product-cart-slice.interface";
-import type { IProduct } from "@/entities/product";
+import type { IProduct, IProductsInCart } from "@/shared/interface";
 
 const loadCartFromLocalStorage = (): IProductsInCart[] => {
   const cart = localStorage.getItem("cart");

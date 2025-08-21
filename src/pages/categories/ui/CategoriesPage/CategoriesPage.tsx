@@ -1,8 +1,9 @@
-import { Container } from "@/shared/ui";
 import React from "react";
-import styles from "./CategoriesPage.module.css";
-import { CategoryList, Contacts } from "@/widgets";
+import { Container } from "@/shared/ui";
 import { Title } from "@/entities";
+import { CategoryList, Contacts } from "@/widgets";
+import styles from "./CategoriesPage.module.css";
+
 const CategoriesPage = (): React.JSX.Element => {
   return (
     <section className={styles.section}>

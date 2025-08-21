@@ -1,8 +1,8 @@
 import React from "react";
 import { CategoryItem } from "@/entities";
-import styles from "./CategoryList.module.css";
 import type { ICategoryListProps } from "./CategoryList.props";
 import { useGetCategoriesQuery } from "@/entities/category/api/categoriesApi";
+import styles from "./CategoryList.module.css";
 
 const CategoryList = ({ cropCount }: ICategoryListProps): React.JSX.Element => {
   const { data } = useGetCategoriesQuery(null);

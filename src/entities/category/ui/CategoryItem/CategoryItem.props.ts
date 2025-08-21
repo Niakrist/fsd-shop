@@ -1,4 +1,4 @@
-import type { ICategory } from "../../model/category.interface";
+import type { ICategory } from "@/shared/interface";
 
 export interface ICategoryItemProps {
   item: ICategory;

@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./CartPage.module.css";
-import { Container, Htag } from "@/shared/ui";
-import { Title, CartItem } from "@/entities";
 import { useAppSelector } from "@/app/store/store";
-import { FormForSend } from "@/features";
+import { Container, Htag } from "@/shared/ui";
 import { formatPrice } from "@/shared/utils";
+import { Title, CartItem } from "@/entities";
+import { FormForSend } from "@/features";
+import styles from "./CartPage.module.css";
 
 const CartPage = (): React.JSX.Element => {
   const cart = useAppSelector((state) => state.cart);

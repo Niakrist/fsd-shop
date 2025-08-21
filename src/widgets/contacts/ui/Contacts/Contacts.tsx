@@ -1,5 +1,5 @@
-import { Container, Icon, WrapperAddress } from "@/shared/ui";
 import React from "react";
+import { Container, Icon, WrapperAddress } from "@/shared/ui";
 import styles from "./Contacts.module.css";
 
 const Contacts = (): React.JSX.Element => {

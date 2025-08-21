@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Subscribe.module.css";
 import { Container, Htag } from "@/shared/ui";
 import { FormForSend } from "@/features";
+import styles from "./Subscribe.module.css";
 
 const Subscribe = (): React.JSX.Element => {
   return (

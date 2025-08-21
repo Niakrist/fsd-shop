@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./CategoryItem.module.css";
 import { Link } from "react-router-dom";
+import styles from "./CategoryItem.module.css";
 
 import type { ICategoryItemProps } from "./CategoryItem.props";
 

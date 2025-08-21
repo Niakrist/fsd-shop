@@ -1,0 +1,35 @@
+.pagination {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.button {
+  font-size: 20px;
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--grey);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button:hover {
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.pagintionActive {
+  color: var(--white);
+  background-color: var(--green);
+}
+
+.pagintionActive:hover {
+  color: var(--white);
+}

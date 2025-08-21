@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./FormForSend.module.css";
 import { Button, Input } from "@/shared/ui";
 import type { IFormForSendProps } from "./FormForSend.props";
+import styles from "./FormForSend.module.css";
 
 const FormForSend = ({
   inputColor,

@@ -1,14 +1,13 @@
-import { useGetProductBySlugQuery } from "@/entities/product/api/productsApi";
-import { ProductSlider, ReadMore } from "@/features";
-import { Button, Container, Htag, Text } from "@/shared/ui";
-import { skipToken } from "@reduxjs/toolkit/query";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./ProductItemPage.module.css";
-import PriceInfo from "@/shared/ui/PriceInfo/PriceInfo";
-import { Counter } from "@/entities";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { useAppDispatch, useAppSelector } from "@/app/store/store";
+import { Counter } from "@/entities";
+import { ProductSlider, ReadMore } from "@/features";
+import { Button, Container, Htag, PriceInfo, Text } from "@/shared/ui";
 import { addOrChangeItemInCart } from "@/entities/cart/model/cartSlice";
+import { useGetProductBySlugQuery } from "@/entities/product/api/productsApi";
+import styles from "./ProductItemPage.module.css";
 
 const ProductItemPage = (): React.JSX.Element => {
   const { slug } = useParams();

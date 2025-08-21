@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-
-import styles from "./CartItem.module.css";
-import type { IProductsInCart } from "../../model/product-cart-slice.interface";
 import { Link } from "react-router-dom";
-import Counter from "../Counter/Counter";
-import PriceInfo from "@/shared/ui/PriceInfo/PriceInfo";
-import { Icon } from "@/shared/ui";
 import { useAppDispatch } from "@/app/store/store";
 import {
   addOrChangeItemInCart,
@@ -13,6 +7,12 @@ import {
   incrementIteminCart,
   removeItemFromCart,
 } from "../../model/cartSlice";
+
+import Counter from "../Counter/Counter";
+
+import { Icon, PriceInfo } from "@/shared/ui";
+import type { IProductsInCart } from "@/shared/interface";
+import styles from "./CartItem.module.css";
 
 interface ICartItemProps {
   item: IProductsInCart;

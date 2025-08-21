@@ -1,4 +1,3 @@
-import type { ICategory } from "@/entities";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface IFilter {
@@ -6,6 +5,8 @@ export interface IFilter {
   maxPrice: string;
   category: string;
   searchTerm: string;
+  offset: string;
+  limit: string;
 }
 
 const initialState: IFilter = {
@@ -13,6 +14,8 @@ const initialState: IFilter = {
   maxPrice: "",
   category: "",
   searchTerm: "",
+  offset: "0",
+  limit: "8",
 };
 
 export const filterSlice = createSlice({

@@ -1,10 +1,9 @@
-import { BannerSlide, Title } from "@/entities";
-import { Container, YandexMap } from "@/shared/ui";
-import { CategoryList, Contacts, ProductList, Subscribe } from "@/widgets";
-import styles from "./HomePage.module.css";
 import React from "react";
-
+import { Container, YandexMap } from "@/shared/ui";
+import { BannerSlide, Title } from "@/entities";
+import { CategoryList, Contacts, ProductList, Subscribe } from "@/widgets";
 import { useGetProductsQuery } from "@/entities/product/api/productsApi";
+import styles from "./HomePage.module.css";
 
 const HomePage = (): React.JSX.Element => {
   const { data: products } = useGetProductsQuery("");

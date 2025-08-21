@@ -1,20 +1,19 @@
-import { useAppDispatch, useAppSelector } from "@/app/store/store";
-import { useDebounce } from "@/shared/hooks";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "@/app/store/store";
 import {
   handleChangeFilter,
   initializeFilter,
   onReset,
   type IFilter,
 } from "../model/filterSlice";
+import { useDebounce } from "@/shared/hooks";
 
 export const useFilter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
-  const { minPrice, maxPrice, searchTerm, category } = useAppSelector(
-    (state) => state.filter
-  );
+  const { minPrice, maxPrice, searchTerm, category, limit, offset } =
+    useAppSelector((state) => state.filter);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -27,6 +26,8 @@ export const useFilter = () => {
     if (params.price_max) initialFilter.maxPrice = params.price_max;
     if (params.title) initialFilter.searchTerm = params.title;
     if (params.categorySlug) initialFilter.category = params.categorySlug;
+    if (params.limit) initialFilter.limit = params.limit;
+    if (params.offset) initialFilter.offset = params.offset;
 
     dispatch(initializeFilter(initialFilter));
   }, [dispatch]);
@@ -35,6 +36,12 @@ export const useFilter = () => {
     const { name, value } = e.target;
     if (name === "minPrice" || name === "maxPrice" || name === "searchTerm") {
       dispatch(handleChangeFilter({ key: name, value: value }));
+    }
+  };
+
+  const handleChangePage = (value: string) => {
+    if (value) {
+      dispatch(handleChangeFilter({ key: "offset", value }));
     }
   };
 
@@ -78,11 +85,30 @@ export const useFilter = () => {
     } else {
       params.delete("title");
     }
+    if (offset) {
+      params.set("offset", offset);
+    } else {
+      params.delete("offset");
+    }
+    if (limit) {
+      params.set("limit", limit);
+    } else {
+      params.delete("limit");
+    }
     setSearchParams(params);
-  }, [minPrice, maxPrice, category, searchParams, debounceValue]);
+  }, [
+    minPrice,
+    maxPrice,
+    category,
+    searchParams,
+    debounceValue,
+    limit,
+    offset,
+  ]);
 
   return {
     handleChange,
+    handleChangePage,
     handleReset,
     isOpen,
     handleClick,
@@ -91,5 +117,7 @@ export const useFilter = () => {
     maxPrice,
     searchTerm,
     category,
+    limit,
+    offset,
   };
 };

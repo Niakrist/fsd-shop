@@ -1,24 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Badge, Button, PriceInfo } from "@/shared/ui";
+import type { IProduct } from "@/shared/interface";
 import styles from "./ProductItem.module.css";
 
-import type { IProduct } from "@/entities";
-import { Badge, Button } from "@/shared/ui";
-import { Link } from "react-router-dom";
-
-import PriceInfo from "@/shared/ui/PriceInfo/PriceInfo";
-interface IProductItemProps
-  extends React.DetailedHTMLProps<
-    React.LiHTMLAttributes<HTMLLIElement>,
-    HTMLLIElement
-  > {
+interface IProductItemProps {
   item: IProduct;
+  handeAddToCart: (product: IProduct, quantity: number) => void;
 }
 
-const ProductItem = ({ item }: IProductItemProps) => {
-  const { title, slug, price, images, description } = item;
+const ProductItem = ({
+  item,
+  handeAddToCart,
+}: IProductItemProps): React.JSX.Element => {
+  const { title, slug, price, images } = item;
+
   return (
     <li className={styles.item}>
-      <Button className={styles.button} bgColor="green" color="white">
+      <Button
+        onClick={() => handeAddToCart(item, 1)}
+        className={styles.button}
+        bgColor="green"
+        color="white">
         Add to cart
       </Button>
       <Badge className={styles.bage} color="white" bgColor="green">

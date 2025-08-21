@@ -1,7 +1,7 @@
+import type { ICategory } from "@/shared/interface";
 import styles from "./DropDown.module.css";
 import { Icon } from "@/shared/ui";
 import cn from "classnames";
-import type { ICategory } from "@/entities";
 
 interface IDropDownProps {
   items: ICategory[];
