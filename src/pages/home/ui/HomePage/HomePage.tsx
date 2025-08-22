@@ -22,7 +22,7 @@ const HomePage = (): React.JSX.Element => {
       <section className={styles.section}>
         <Container>
           <Title title="Sale" tag="h2" link="products" />
-          <ProductList products={products || []} cropCount={4} />
+          <ProductList products={products || []} />
         </Container>
       </section>
 
