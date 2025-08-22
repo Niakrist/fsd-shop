@@ -5,14 +5,15 @@ import { addOrChangeItemInCart } from "@/entities/cart/model/cartSlice";
 import type { IProduct } from "@/shared/interface";
 import type { IProductListProps } from "./ProductList.props";
 import styles from "./ProductList.module.css";
-import { useFilter } from "@/features";
 
 const ProductList = ({ products }: IProductListProps): React.JSX.Element => {
   const dispatch = useAppDispatch();
-  const { limit } = useFilter();
+
   const handeAddToCart = (product: IProduct, quantity: number = 1) => {
     dispatch(addOrChangeItemInCart({ product, quantity }));
   };
+
+  const limit = 8;
 
   const cropData =
     products && limit && products.length > Number(limit)

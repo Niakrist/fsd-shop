@@ -23,6 +23,8 @@ const ProductsFilter = ({
     category,
   } = useFilter();
 
+  console.log("category: ", categories);
+
   return (
     <div className={styles.filter}>
       <div className={styles.group}>

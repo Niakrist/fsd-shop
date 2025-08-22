@@ -8,14 +8,18 @@ import { useGetAllProductsByCategoryQuery } from "@/entities/product/api/product
 import { useGetCategoryBySlugQuery } from "@/entities/category/api/categoriesApi";
 import styles from "./CategoryItemPage.module.css";
 import { Pagination } from "@/features";
+import { useChangePage } from "@/shared/hooks";
 
 const CategoryItemPage = (): React.JSX.Element => {
   const { slug } = useParams();
-
   const { data: category } = useGetCategoryBySlugQuery(slug ?? skipToken);
 
   const { data: products } = useGetAllProductsByCategoryQuery(
     category?.id ?? skipToken
+  );
+
+  const { cropProducts, handleChange, totalPages, currentPage } = useChangePage(
+    products || []
   );
 
   if (!category || !products) {
@@ -26,8 +30,12 @@ const CategoryItemPage = (): React.JSX.Element => {
     <section className={styles.section}>
       <Container>
         <Title title={category.name} tag="h1" />
-        <ProductList products={products || []} />
-        <Pagination />
+        <ProductList products={cropProducts} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handleChange={handleChange}
+        />
       </Container>
       <Contacts />
     </section>

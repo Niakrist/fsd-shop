@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
-import { useGetProductsQuery } from "@/entities/product/api/productsApi";
-
 import styles from "./Pagination.module.css";
-import { useFilter } from "../../hooks";
+import { useLocation } from "react-router-dom";
 
-const Pagination = (): React.JSX.Element => {
-  const { data: products } = useGetProductsQuery("");
-  const { limit, offset, handleChangePage } = useFilter();
-  const [currentPage, setCurrentPage] = useState(offset);
-  const totalPages =
-    products?.length && Math.ceil(products?.length / Number(limit));
+interface IPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  handleChange: (page: number) => void;
+}
+
+const Pagination = ({
+  currentPage,
+  totalPages,
+  handleChange,
+}: IPaginationProps): React.JSX.Element => {
+  const location = useLocation();
+
+  useEffect(() => {
+    handleChange(0);
+  }, [location]);
 
   const pages = Array.from(
     { length: totalPages as number },
     (_, index) => index
   );
-
-  const handleChange = (page: number) => {
-    handleChangePage(String(page * Number(limit)));
-    setCurrentPage(String(page));
-  };
 
   return (
     <ul className={styles.pagination}>
@@ -29,7 +32,7 @@ const Pagination = (): React.JSX.Element => {
           <button
             onClick={() => handleChange(page)}
             className={cn(styles.button, {
-              [styles.pagintionActive]: String(page) === currentPage,
+              [styles.pagintionActive]: page === currentPage,
             })}>
             {page + 1}
           </button>
